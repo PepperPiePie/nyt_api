@@ -1,26 +1,98 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react';
+import axios from 'axios';
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { ReactComponent as Logo } from './images/NYT-logo.svg';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import './styles/style.css';
+import 'react-perfect-scrollbar/dist/css/styles.css';
+
+import Page from './components/Page';
+import NotFound from './components/NotFound';
+
+const API_KEY = "3If5G3vcIAo7p7kAkiFMZNCcEPC3yQ0n";
+
+class App extends Component {
+
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            books: [],
+            list: [],
+            genre: "hardcover-fiction",
+            subtitle: "Hardcover Fiction",
+            date: '',
+            isLoading: true
+        }
+
+        this.setGenre = this.setGenre.bind(this);
+    }
+
+    componentDidMount() {
+        console.log("App component has mounted");
+        this.getBooks();
+        this.getGenre();
+    }
+
+    getBooks() {
+        axios.get(`https://api.nytimes.com/svc/books/v3/lists/current/${this.state.genre}.json?api-key=${API_KEY}`)
+            .then((res) => {
+                this.setState({
+                    books: res.data.results.books,
+                    date: res.data.results.bestsellers_date
+                })
+            });
+    }
+
+    getGenre() {
+        axios.get(`https://api.nytimes.com/svc/books/v3/lists/names?api-key=${API_KEY}`)
+            .then((res) => {
+                this.setState({
+                    list: res.data.results,
+                    isLoading: false
+                })
+            });
+    }
+
+    setGenre(e) {
+        e.preventDefault();
+
+        this.setState({
+            genre: e.target.id,
+            subtitle: e.currentTarget.dataset.id,
+            books: []
+        }, () => {
+            this.getBooks();
+        })
+    }
+
+    render() {
+
+        if (this.state.isLoading) {
+            return <div>Loading...</div>
+        }
+
+        return(
+            <Router>
+            <div className="page">
+            <div className="title">
+            <div className="title-header">
+            <Logo className="logo"/>
+            <h1> The current Best Sellers list</h1>
+        </div>
+        <div className="date">Published on {this.state.date}</div>
+        </div>
+        <Switch>
+        <Route exact path={'/'}
+        render={(props) => <Page {...props} books={this.state.books} list={this.state.list} subtitle={this.state.subtitle} setGenre={this.setGenre}/>}
+        />
+        <Route component={NotFound} />
+        </Switch>
+        </div>
+        </Router>
+
+    )
+    };
 }
 
 export default App;
