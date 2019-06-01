@@ -89,7 +89,7 @@ class App extends Component {
             <Logo className="logo"/>
             <h1> The current Best Sellers list</h1>
         </div>
-        <div className="date">Published on {this.state.date}</div>
+        <div className="date">Updates weekly. Published on {this.state.date}</div>
         </div>
         <Switch>
         <Route exact path={'/'}

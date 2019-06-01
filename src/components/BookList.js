@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import BookDetail from './BookDetail';
 
 class BookList extends Component {
 
@@ -9,8 +10,11 @@ class BookList extends Component {
             booklist.push(
                 <li key={elm.title}>
                     <div className="book-rank">{elm.rank}.</div>
-                    <div className="book-title">{elm.title}</div>
-                    <div className="book-author">by {elm.author}</div>
+                    <div className="book-main">
+                        <div className="book-title">{elm.title}</div>
+                        <div className="book-author">by {elm.author}</div>
+                    </div>
+                    <BookDetail book={elm}/>
                 </li>)
         });
         return (
