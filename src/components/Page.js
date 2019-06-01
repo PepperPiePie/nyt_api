@@ -9,7 +9,7 @@ class Page extends Component {
 
         return (
             <div className="container">
-                <GenreList list={this.props.list} setGenre={this.props.setGenre}/>
+                <GenreList list={this.props.list} setGenre={this.props.setGenre} search={this.props.search} updateSearch={this.props.updateSearch}/>
                 <BookList books={this.props.books} subtitle={this.props.subtitle}/>
             </div>
         );

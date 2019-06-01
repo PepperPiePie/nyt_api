@@ -21,11 +21,13 @@ class App extends Component {
             list: [],
             genre: "hardcover-fiction",
             subtitle: "Hardcover Fiction",
-            date: '',
+            date: "",
+            search: "",
             isLoading: true
-        }
+        };
 
         this.setGenre = this.setGenre.bind(this);
+        this.updateSearch = this.updateSearch.bind(this);
     }
 
     componentDidMount() {
@@ -66,6 +68,13 @@ class App extends Component {
         })
     }
 
+    updateSearch(e) {
+        //console.log(e.target.value);
+        this.setState({
+            search: e.target.value
+        })
+    }
+
     render() {
 
         if (this.state.isLoading) {
@@ -84,7 +93,14 @@ class App extends Component {
         </div>
         <Switch>
         <Route exact path={'/'}
-        render={(props) => <Page {...props} books={this.state.books} list={this.state.list} subtitle={this.state.subtitle} setGenre={this.setGenre}/>}
+            render={(props) =>
+                <Page {...props}
+                      books={this.state.books}
+                      list={this.state.list}
+                      subtitle={this.state.subtitle}
+                      setGenre={this.setGenre}
+                      search={this.state.search}
+                      updateSearch={this.updateSearch}/>}
         />
         <Route component={NotFound} />
         </Switch>
