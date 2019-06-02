@@ -35,7 +35,7 @@ class GenreList extends Component {
                     <div className="search">
                         <input className="search-input"
                            type="text"
-                           placeholder="Search for..."
+                           placeholder="Search for category"
                            value={this.search}
                            onChange={this.props.updateSearch}/>
                         <FontAwesomeIcon icon="search" className="search-button"/>

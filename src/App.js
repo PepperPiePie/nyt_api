@@ -23,6 +23,7 @@ class App extends Component {
             subtitle: "Hardcover Fiction",
             date: "",
             search: "",
+            style: { height: '75px', width: '400px'},
             isLoading: true
         };
 
@@ -83,29 +84,29 @@ class App extends Component {
 
         return(
             <Router>
-            <div className="page">
-            <div className="title">
-            <div className="title-header">
-            <Logo className="logo"/>
-            <h1> The current Best Sellers list</h1>
-        </div>
-        <div className="date">Updates weekly. Published on {this.state.date}</div>
-        </div>
-        <Switch>
-        <Route exact path={'/'}
-            render={(props) =>
-                <Page {...props}
-                      books={this.state.books}
-                      list={this.state.list}
-                      subtitle={this.state.subtitle}
-                      setGenre={this.setGenre}
-                      search={this.state.search}
-                      updateSearch={this.updateSearch}/>}
-        />
-        <Route component={NotFound} />
-        </Switch>
-        </div>
-        </Router>
+                <div className="page">
+                    <div className="title">
+                        <div className="title-header">
+                            <Logo style={this.state.style}/>
+                            <h1> The current Best Sellers list</h1>
+                        </div>
+                        <div className="date">Published on {this.state.date}</div>
+                    </div>
+                    <Switch>
+                        <Route exact path={'/'}
+                            render={(props) =>
+                                <Page {...props}
+                                      books={this.state.books}
+                                      list={this.state.list}
+                                      subtitle={this.state.subtitle}
+                                      setGenre={this.setGenre}
+                                      search={this.state.search}
+                                      updateSearch={this.updateSearch}/>}
+                        />
+                        <Route component={NotFound} />
+                    </Switch>
+                </div>
+            </Router>
 
     )
     };

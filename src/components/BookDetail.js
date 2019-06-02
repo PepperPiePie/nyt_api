@@ -7,7 +7,9 @@ class BookDetail extends Component {
 
         this.state = {
             on: false,
-        }
+        };
+
+        this.toggleDetail = this.toggleDetail.bind(this);
     }
 
     toggleDetail = () => {
@@ -15,11 +17,12 @@ class BookDetail extends Component {
           on: !this.state.on,
       })
     };
+
     render() {
 
         return (
             <div className="bookdetail">
-                <button className="bookdetail-button" onClick={this.toggleDetail.bind(this)}>Details</button>
+                <button className="bookdetail-button" onClick={this.toggleDetail}>Details</button>
                 {this.state.on &&
                     <img className="bookdetail-img" alt={this.props.book.title} src={this.props.book.book_image}/>
                 }
