@@ -33,12 +33,13 @@ class GenreList extends Component {
                 <div className="genrelist-header">
                     <div className="genrelist-category">Category</div>
                     <div className="search">
+                        <FontAwesomeIcon icon="search" className="search-button"/>
                         <input className="search-input"
                            type="text"
                            placeholder="Search for category"
                            value={this.search}
                            onChange={this.props.updateSearch}/>
-                        <FontAwesomeIcon icon="search" className="search-button"/>
+
                     </div>
                 </div>
                 <PerfectScrollbar>

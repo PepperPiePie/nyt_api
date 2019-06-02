@@ -76,6 +76,15 @@ class App extends Component {
         })
     }
 
+    // getClicks() {
+    //     axios.get('https://api.countapi.xyz/hit/mysite.com/awesomeclick')
+    //         .then( (res) => {
+    //             this.setState({
+    //                 click: res.value
+    //             })
+    //         })
+    // }
+
     render() {
 
         if (this.state.isLoading) {
