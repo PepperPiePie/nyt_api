@@ -58,6 +58,13 @@ ul {
     justify-self: flex-end;
 }
 
+.visited {
+    font-size: 0.8em;
+    color: #32695c;
+    text-align: left;
+    margin: 0 0 1em 3em;
+}
+
 /*====GENRELIST=====================================================================*/
 
 .genrelist {
@@ -104,12 +111,12 @@ ul {
 .genrelist .search-input {
     background-color: #C8CFD0;
     color: #001D2B;
-    width: 0;
     height: 28px;
     outline: 0;
     border: 0;
     font-size: 0.8em;
-    border-radius: 15px
+    border-radius: 15px;
+    width: 0;
 }
 
 ::-webkit-input-placeholder {
@@ -132,7 +139,6 @@ ul {
     width: 160px;
     padding-left: 15px;
     cursor: pointer;
-    /*transform: translate(-15px, -15px) ;*/
 }
 
 .search:hover .search-input{
@@ -182,6 +188,16 @@ ul {
     padding: 0.5em 0;
 }
 
+/*====WELCOME=====================================================================*/
+
+.welcome {
+    grid-area: books;
+    background-color: #001D2B;
+    color: #D4D5D8;
+    margin: 0 2.5em 3em 0;
+    box-shadow: #32695c -3px 3px 10px;
+}
+
 /*====BOOKLIST=====================================================================*/
 
 .booklist {
@@ -190,6 +206,10 @@ ul {
     color: #D4D5D8;
     margin: 0 2.5em 3em 0;
     box-shadow: #32695c -3px 3px 10px;
+}
+
+.booklist-result {
+    display: contents;
 }
 
 .subtitle {

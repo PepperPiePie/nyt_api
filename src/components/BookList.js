@@ -8,7 +8,7 @@ class BookList extends Component {
         let booklist = [];
         this.props.books.forEach((elm) => {
             booklist.push(
-                <li key={elm.title}>
+                <li key={elm.primary_isbn10}>
                     <div className="book-rank">{elm.rank}.</div>
                     <div className="book-main">
                         <div className="book-title">{elm.title}</div>
@@ -20,6 +20,7 @@ class BookList extends Component {
         return (
             <div className="booklist">
                 <div className="subtitle">{subtitle}</div>
+
                 <ul>
                     {booklist}
                 </ul>

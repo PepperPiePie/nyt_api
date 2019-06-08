@@ -11,6 +11,7 @@ library.add(faSearch);
 class GenreList extends Component {
 
     render() {
+
         let genrelist = [];
         let filteredGenre = this.props.list.filter(
             (elm) => {
@@ -32,6 +33,8 @@ class GenreList extends Component {
             <div className="genrelist">
                 <div className="genrelist-header">
                     <div className="genrelist-category">Category</div>
+                    {!this.props.search 
+                    ?
                     <div className="search">
                         <FontAwesomeIcon icon="search" className="search-button"/>
                         <input className="search-input"
@@ -39,8 +42,17 @@ class GenreList extends Component {
                            placeholder="Search for category"
                            value={this.search}
                            onChange={this.props.updateSearch}/>
-
                     </div>
+                    : 
+                    <div className="search" style={{width: '160px', paddingLeft: '15px'}}>
+                        <FontAwesomeIcon icon="search" className="search-button" style={{color: 'white'}}/>
+                        <input className="search-input"
+                           type="text"
+                           placeholder="Search for category"
+                           value={this.search}
+                           onChange={this.props.updateSearch}
+                           style={{width: '100%'}}/>
+                    </div>}
                 </div>
                 <PerfectScrollbar>
                     <ul>

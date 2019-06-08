@@ -10,6 +10,7 @@ import Page from './components/Page';
 import NotFound from './components/NotFound';
 
 const API_KEY = "3If5G3vcIAo7p7kAkiFMZNCcEPC3yQ0n";
+// const COUNTAPI_KEY = "865edd60-a3b9-4303-b22a-f150d2535694";
 
 class App extends Component {
 
@@ -19,11 +20,14 @@ class App extends Component {
         this.state = {
             books: [],
             list: [],
-            genre: "hardcover-fiction",
-            subtitle: "Hardcover Fiction",
+            welcome: true,
+            genre: "",
+            subtitle: "",
             date: "",
+            update: "",
             search: "",
             style: { height: '75px', width: '400px'},
+            visited: "",
             isLoading: true
         };
 
@@ -33,8 +37,8 @@ class App extends Component {
 
     componentDidMount() {
         console.log("App component has mounted");
-        this.getBooks();
         this.getGenre();
+        this.getVisits();
     }
 
     getBooks() {
@@ -42,7 +46,9 @@ class App extends Component {
             .then((res) => {
                 this.setState({
                     books: res.data.results.books,
-                    date: res.data.results.bestsellers_date
+                    date: res.data.results.bestsellers_date,
+                    update: res.data.results.updated,
+                    welcome: false
                 })
             });
     }
@@ -63,7 +69,6 @@ class App extends Component {
         this.setState({
             genre: e.target.id,
             subtitle: e.currentTarget.dataset.id,
-            books: []
         }, () => {
             this.getBooks();
         })
@@ -76,14 +81,15 @@ class App extends Component {
         })
     }
 
-    // getClicks() {
-    //     axios.get('https://api.countapi.xyz/hit/mysite.com/awesomeclick')
-    //         .then( (res) => {
-    //             this.setState({
-    //                 click: res.value
-    //             })
-    //         })
-    // }
+    getVisits() {
+        axios.get('https://api.countapi.xyz/hit/newyorktimes-publicapi.herokuapp.com/visits')
+            .then( (res) => {
+                // console.log(res);
+                this.setState({
+                    visited: res.data.value
+                })
+            })
+    }
 
     render() {
 
@@ -99,7 +105,7 @@ class App extends Component {
                             <Logo style={this.state.style}/>
                             <h1> The current Best Sellers list</h1>
                         </div>
-                        <div className="date">Published on {this.state.date}</div>
+                        {!this.state.date ? null : <div className="date">Updates {this.state.update}. Published on {this.state.date}</div>}
                     </div>
                     <Switch>
                         <Route exact path={'/'}
@@ -107,9 +113,11 @@ class App extends Component {
                                 <Page {...props}
                                       books={this.state.books}
                                       list={this.state.list}
+                                      welcome={this.state.welcome}
                                       subtitle={this.state.subtitle}
                                       setGenre={this.setGenre}
                                       search={this.state.search}
+                                      visited={this.state.visited}
                                       updateSearch={this.updateSearch}/>}
                         />
                         <Route component={NotFound} />
