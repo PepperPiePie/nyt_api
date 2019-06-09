@@ -344,7 +344,7 @@ ul {
     width: 40%;
     color: #001D2B;
     background-color: darkgoldenrod;
-    background-image: linear-gradient(175deg, #D4D5D8 65%,#468778);
+    /*background-image: linear-gradient(175deg, #D4D5D8 65%,#468778);*/
     border: 1px solid darkgoldenrod;
 }
 
