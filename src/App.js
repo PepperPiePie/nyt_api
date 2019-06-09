@@ -30,11 +30,14 @@ class App extends Component {
             search: "",
             style: { height: '75px', width: '400px', fill: '#468778'},
             visited: "",
+            listview: true,
             isLoading: true
         };
 
         this.setGenre = this.setGenre.bind(this);
         this.updateSearch = this.updateSearch.bind(this);
+        this.setListview = this.setListview.bind(this);
+        this.setMosaicview = this.setMosaicview.bind(this);
     }
 
     componentDidMount() {
@@ -94,6 +97,22 @@ class App extends Component {
             })
     }
 
+    setListview (e) {
+        e.preventDefault();
+
+        this.setState({
+            listview: true,
+        })
+    }
+
+    setMosaicview (e) {
+        e.preventDefault();
+
+        this.setState({
+            listview: false,
+        })
+    }
+
     render() {
 
         if (this.state.isLoading) {
@@ -123,6 +142,9 @@ class App extends Component {
                                       setGenre={this.setGenre}
                                       search={this.state.search}
                                       visited={this.state.visited}
+                                      listview={this.state.listview}
+                                      setMosaicview={this.setMosaicview}
+                                      setListview={this.setListview}
                                       updateSearch={this.updateSearch}/>}
                         />
                         <Route component={NotFound} />

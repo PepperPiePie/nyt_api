@@ -203,10 +203,11 @@ ul {
     grid-area: books;
     background-color: #001D2B;
     color: #D4D5D8;
-    padding: 3em;
-    font-size: 1.2em;
+    padding-left: 10%;
+    padding-top: 3em;
+    font-size: 1em;
     font-weight: 900;
-    line-height: 1.6em;
+    line-height: 2em;
     text-transform: uppercase;
     letter-spacing: 1px;
     margin: 0 0 2em 0;
@@ -219,7 +220,6 @@ ul {
 
 .welcome p {
     width: 50ch;
-    margin: 0 auto;
     border-bottom: darkgoldenrod 1px solid;
     padding: 0.5em 0;
 }
@@ -228,27 +228,57 @@ ul {
     border-top: darkgoldenrod 1px solid;
 }
 
+/*====BOOKS=====================================================================*/
+
+.books {
+    grid-area: books;
+    background-color: #001D2B;
+    margin: 0 0 2em 0;
+    box-shadow: #32695c -5px 2px 15px;
+    color: #D4D5D8;
+}
+
+.books-header {
+    text-align: left;
+    border-bottom: 2px solid #C8CFD0;
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.subtitle {
+    padding: 1em 3em 1em 8vw;
+    margin: 0;
+    color: darkgoldenrod;
+    font-style: italic;
+    letter-spacing: 1px;
+}
+
+.books-view {
+    margin-right: 2vw;
+}
+
+.books-view-icon {
+    margin-left: 1em;
+    padding: 0.5em;
+    font-size: 1em;
+    transition: all 0.3s cubic-bezier(.54,0,.52,.68);
+    border-radius: 50%;
+}
+
+.books-view-icon:hover {
+    color: #001D2B;
+    background-color: darkgoldenrod;
+}
 /*====BOOKLIST=====================================================================*/
 
 .booklist {
-    grid-area: books;
-    background-color: #001D2B;
-    color: #D4D5D8;
-    margin: 0 0 2em 0;
-    box-shadow: #32695c -5px 2px 15px;
+
 }
 
 .booklist-result {
     display: contents;
-}
-
-.subtitle {
-    color: darkgoldenrod;
-    text-align: left;
-    padding: 1em 3em 1em 8vw;
-    font-style: italic;
-    letter-spacing: 1px;
-    border-bottom: 2px solid #C8CFD0;
 }
 
 .booklist li {
@@ -314,7 +344,7 @@ ul {
     width: 40%;
     color: #001D2B;
     background-color: darkgoldenrod;
-    /*background-image: linear-gradient(175deg, #D4D5D8 65%,#468778);*/
+    background-image: linear-gradient(175deg, #D4D5D8 65%,#468778);
     border: 1px solid darkgoldenrod;
 }
 
@@ -343,14 +373,14 @@ ul {
      margin: 0.5em 0;
      padding: 0;
      color: #76A199;
-    width: 44ch;
+     width: 44ch;
  }
 
 .bookdetail-body p:last-child {
     margin: 3.25em 0;
 }
 
-.bookdetail-body .bookdetail-head {
+.bookdetail-head {
     color: darkgoldenrod;
     font-size: 0.8em;
     font-weight: 900;
@@ -371,3 +401,77 @@ ul {
 .bookdetail-body a:hover {
     color: #D4D5D8;
 }
+
+/*====BOOKMOSAIC=====================================================================*/
+
+.bookmosaic {
+    display: contents;
+}
+
+.bookmosaic ul {
+    box-sizing: border-box;
+    padding: 1.5em;
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 1.5em;
+}
+
+.bookmosaic li {
+    display: flex;
+    flex-flow: column;
+    flex-wrap: nowrap;
+    align-items: center;
+    padding-bottom: 1em;
+    border: 1px solid #76A199;
+    font-size: 0.85em;
+    letter-spacing: 1px;
+    /*box-shadow: #323872 -2px 2px 5px;*/
+}
+
+.bookmosaic-rank {
+    font-weight: 900;
+    color: #76A199;
+    align-self: flex-start;
+    padding: 0.5em 0 0 0.75em;
+}
+
+.bookmosaic-img {
+    grid-area: img;
+    height: 210px;
+    margin-bottom: 0.75em;
+    padding: 0.5em;
+    border: 1px solid darkgoldenrod;
+}
+
+.bookmosaic .book-title {
+    font-size: 1.2em !important;
+    margin-top: 1em;
+}
+
+.bookmosaic .book-author {
+    margin-bottom: 2em;
+}
+
+.bookmosaic p {
+    margin: 0.25em 1.5em;
+    line-height: 1.4em;
+    padding: 0;
+    color: #76A199;
+    text-align: center;
+}
+
+.bookmosaic a{
+    margin-top: 1em;
+    text-decoration: none;
+    color: darkgoldenrod;
+    font-size: 0.8em;
+    font-weight: 900;
+    text-transform: uppercase;
+    transition: 0.2s cubic-bezier(.61,.2,.43,.98);
+}
+
+.bookmosaic a:hover {
+    color: #D4D5D8;
+}
+
