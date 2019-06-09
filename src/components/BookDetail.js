@@ -27,10 +27,12 @@ class BookDetail extends Component {
                 <div className="bookdetail-toggle">
                     <img className="bookdetail-img" alt={this.props.book.title} src={this.props.book.book_image}/>
                     <div className="bookdetail-body">
-                    <p><span className="bookdetail-head">Description </span>{this.props.book.description}</p>
+                    <p className="bookdetail-head">Description </p>
+                    <p>{this.props.book.description}</p>
                     <p><span className="bookdetail-head">Publisher </span>{this.props.book.publisher}</p>
-                    <p><span className="bookdetail-head">{this.props.book.weeks_on_list}</span> weeks on the list</p>
-                    <a href={this.props.book.amazon_product_url} target="_blank" rel="noopener noreferrer">Buy it on Amazon</a>
+                    <a href={this.props.book.amazon_product_url} target="_blank" rel="noopener noreferrer">See on Amazon</a>
+                    <p>{this.props.book.weeks_on_list} weeks on the list</p>
+
                     </div>
                 </div>
                 }

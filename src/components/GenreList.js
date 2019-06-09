@@ -32,14 +32,14 @@ class GenreList extends Component {
         return (
             <div className="genrelist">
                 <div className="genrelist-header">
-                    <div className="genrelist-category">Category</div>
+                    <div className="genrelist-category">Categories</div>
                     {!this.props.search 
                     ?
                     <div className="search">
                         <FontAwesomeIcon icon="search" className="search-button"/>
                         <input className="search-input"
                            type="text"
-                           placeholder="Search for category"
+                           placeholder="Search"
                            value={this.search}
                            onChange={this.props.updateSearch}/>
                     </div>
@@ -48,7 +48,7 @@ class GenreList extends Component {
                         <FontAwesomeIcon icon="search" className="search-button" style={{color: 'white'}}/>
                         <input className="search-input"
                            type="text"
-                           placeholder="Search for category"
+                           placeholder="Search"
                            value={this.search}
                            onChange={this.props.updateSearch}
                            style={{width: '100%'}}/>

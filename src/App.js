@@ -5,12 +5,14 @@ import { ReactComponent as Logo } from './images/NYT-logo.svg';
 
 import './styles/style.css';
 import 'react-perfect-scrollbar/dist/css/styles.css';
+import { ScaleLoader } from 'react-spinners';
 
 import Page from './components/Page';
 import NotFound from './components/NotFound';
 
 const API_KEY = "3If5G3vcIAo7p7kAkiFMZNCcEPC3yQ0n";
 // const COUNTAPI_KEY = "865edd60-a3b9-4303-b22a-f150d2535694";
+
 
 class App extends Component {
 
@@ -26,7 +28,7 @@ class App extends Component {
             date: "",
             update: "",
             search: "",
-            style: { height: '75px', width: '400px'},
+            style: { height: '75px', width: '400px', fill: '#468778'},
             visited: "",
             isLoading: true
         };
@@ -65,7 +67,8 @@ class App extends Component {
 
     setGenre(e) {
         e.preventDefault();
-
+        // e.target.style.color = '#C8CFD0';
+        // e.target.style.backgroundColor = '#468778';
         this.setState({
             genre: e.target.id,
             subtitle: e.currentTarget.dataset.id,
@@ -94,7 +97,9 @@ class App extends Component {
     render() {
 
         if (this.state.isLoading) {
-            return <div>Loading...</div>
+            return <div className="loading">
+                <ScaleLoader sizeUnit={"px"} size={15} color={'#468778'} />
+            </div>
         }
 
         return(

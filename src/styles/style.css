@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Lato:400,400i,700,700i,900,900i&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Lato:300i,400,400i,700,700i,900,900i&display=swap');
 
 body {
     font-family: 'Lato', sans-serif;
@@ -20,11 +20,18 @@ ul {
     display: grid;
     width: 95%;
     height: 100vh;
-    grid-template: "genre title" 100px "genre books" 1fr / 1fr 3fr;
+    grid-template: "genre title" 120px "genre books" 1fr / 2fr 7fr;
 }
 
 .container {
     display: contents;
+}
+
+.loading {
+    width: 100vw;
+    height: 100vh;
+    display: block;
+    margin: 19vh 48vw;
 }
 
 .title {
@@ -44,12 +51,12 @@ ul {
 }
 
 .title h1 {
-    font-weight: 400;
+    font-weight: 300;
     font-style: italic;
-    font-size: 1.6em;
+    font-size: 1.8em;
     margin: 0.5em;
-    padding-bottom: 0.2em;
-
+    padding-bottom: 0.1em;
+    color: #468778;
 }
 
 .title .date {
@@ -59,19 +66,20 @@ ul {
 }
 
 .visited {
+    grid-column-end: 3;
     font-size: 0.8em;
-    color: #32695c;
-    text-align: left;
-    margin: 0 0 1em 3em;
+    color: #468778;
+    text-align: right;
+    margin: 0 0 1em 0;
 }
 
 /*====GENRELIST=====================================================================*/
 
 .genrelist {
     grid-area: genre;
-    max-height: 80vh;
+    max-height: 75vh;
     overflow: hidden;
-    margin: 100px 0 0 0;
+    margin: 120px 0 0 0;
     font-weight: 700;
     margin-right: 0.15em;
     display: flex;
@@ -186,6 +194,7 @@ ul {
     font-size: 1.5em;
     align-self: center;
     padding: 0.5em 0;
+
 }
 
 /*====WELCOME=====================================================================*/
@@ -194,8 +203,29 @@ ul {
     grid-area: books;
     background-color: #001D2B;
     color: #D4D5D8;
-    margin: 0 2.5em 3em 0;
-    box-shadow: #32695c -3px 3px 10px;
+    padding: 3em;
+    font-size: 1.2em;
+    font-weight: 900;
+    line-height: 1.6em;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin: 0 0 2em 0;
+    box-shadow: #32695c -5px 2px 15px;
+    background-image: url("../images/nyt_api-books.svg");
+    background-repeat: no-repeat;
+    background-position: bottom right;
+    background-size: 75%;
+}
+
+.welcome p {
+    width: 50ch;
+    margin: 0 auto;
+    border-bottom: darkgoldenrod 1px solid;
+    padding: 0.5em 0;
+}
+
+.welcome p:first-child {
+    border-top: darkgoldenrod 1px solid;
 }
 
 /*====BOOKLIST=====================================================================*/
@@ -204,8 +234,8 @@ ul {
     grid-area: books;
     background-color: #001D2B;
     color: #D4D5D8;
-    margin: 0 2.5em 3em 0;
-    box-shadow: #32695c -3px 3px 10px;
+    margin: 0 0 2em 0;
+    box-shadow: #32695c -5px 2px 15px;
 }
 
 .booklist-result {
@@ -213,6 +243,7 @@ ul {
 }
 
 .subtitle {
+    color: darkgoldenrod;
     text-align: left;
     padding: 1em 3em 1em 8vw;
     font-style: italic;
@@ -276,15 +307,15 @@ ul {
     width: 25%;
     border: 1px solid #001D2B;
     border-radius: 10px;
-    transition: width 0.3s cubic-bezier(.61,.2,.43,.98), background-color 0.2s cubic-bezier(.54,.01,.87,1);
+    transition: width 0.3s cubic-bezier(.61,.2,.43,.98), background-color 0.2s cubic-bezier(.54,.01,.87,1), border 0.2s cubic-bezier(.54,.01,.87,1);
 }
 
 .bookdetail-button:hover {
     width: 40%;
     color: #001D2B;
-    background-color: #D4D5D8;
+    background-color: darkgoldenrod;
     /*background-image: linear-gradient(175deg, #D4D5D8 65%,#468778);*/
-    border: 1px solid #D4D5D8;
+    border: 1px solid darkgoldenrod;
 }
 
 .bookdetail-toggle {
@@ -298,23 +329,29 @@ ul {
     width: 75%;
     margin-top: 0.75em;
     padding: 1em;
-    border: 1px solid #76A199;
+    border: 1px solid darkgoldenrod;
 }
 
 .bookdetail-body {
     grid-area: body;
-    align-self: center;
+    padding-top: 1em;
     line-height: 1.3em;
     letter-spacing: 1px;
 }
 
 .bookdetail-body p {
-    margin: 1em 0;
-    padding: 0;
+     margin: 0.5em 0;
+     padding: 0;
+     color: #76A199;
+    width: 44ch;
+ }
+
+.bookdetail-body p:last-child {
+    margin: 3.25em 0;
 }
 
-.bookdetail-body span {
-    color: #D4D5D8;
+.bookdetail-body .bookdetail-head {
+    color: darkgoldenrod;
     font-size: 0.8em;
     font-weight: 900;
     text-transform: uppercase;
@@ -324,7 +361,7 @@ ul {
 
 .bookdetail-body a{
     text-decoration: none;
-    color: #76A199;
+    color: darkgoldenrod;
     font-size: 0.8em;
     font-weight: 900;
     text-transform: uppercase;
