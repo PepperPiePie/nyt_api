@@ -7,7 +7,7 @@ class BookMosaic extends Component {
         let booklist = [];
         this.props.books.forEach((elm) => {
             booklist.push(
-                <li key={elm.primary_isbn10}>
+                <li key={elm.primary_isbn13}>
                     <div className="bookmosaic-rank">{elm.rank}.</div>
                     <img className="bookmosaic-img" alt={elm.title} src={elm.book_image}/>
                     <div className="book-title">{elm.title}</div>

@@ -6,15 +6,16 @@ import { ReactComponent as Logo } from './images/NYT-logo.svg';
 import './styles/style.css';
 import 'react-perfect-scrollbar/dist/css/styles.css';
 import { ScaleLoader } from 'react-spinners';
+// import { Spring } from 'react-spring';
 
 import Page from './components/Page';
 import NotFound from './components/NotFound';
 
 const API_KEY = "3If5G3vcIAo7p7kAkiFMZNCcEPC3yQ0n";
-// const COUNTAPI_KEY = "865edd60-a3b9-4303-b22a-f150d2535694";
-
 
 class App extends Component {
+
+    // API_URL = process.env.API_URL;
 
     constructor(props) {
         super(props);
