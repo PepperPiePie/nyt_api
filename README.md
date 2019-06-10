@@ -1,3 +1,5 @@
+## About project
+
 A small one-side frontend client build in React for displaying data from New York Times API, specifically Books API for current Bestseller Lists.
 
 The overall goal was to create a client capable of displaying data from the APIs in a nice structured way with responsive layout.
@@ -6,7 +8,7 @@ The overall goal was to create a client capable of displaying data from the APIs
 Checkout [developer.nytimes.com](https://developer.nytimes.com/) for all of the documentation about using NYTimes APIs and to signup for an API Key.
 
 There are two rate limits per API: 4,000 requests per day and 10 requests per minute. You should sleep 6 seconds between calls to avoid hitting the per minute rate limit.
-### Used libraries
+## Used libraries
 
 [react-fontawesome](https://github.com/FortAwesome/react-fontawesome) for icons
 
