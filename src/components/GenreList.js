@@ -30,7 +30,7 @@ class GenreList extends Component {
         });
 
         return (
-            <div className="genrelist">
+            <div className={this.props.genrelistCSS}>
                 <div className="genrelist-header">
                     <div className="genrelist-category">Categories</div>
                     {!this.props.search 

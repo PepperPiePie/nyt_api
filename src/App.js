@@ -3,13 +3,12 @@ import axios from 'axios';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { ReactComponent as Logo } from './images/NYT-logo.svg';
 
+import Page from './components/Page';
+import NotFound from './components/NotFound';
+
 import './styles/style.css';
 import 'react-perfect-scrollbar/dist/css/styles.css';
 import { ScaleLoader } from 'react-spinners';
-// import { Spring } from 'react-spring';
-
-import Page from './components/Page';
-import NotFound from './components/NotFound';
 
 const API_KEY = "3If5G3vcIAo7p7kAkiFMZNCcEPC3yQ0n";
 
@@ -32,6 +31,8 @@ class App extends Component {
             style: { height: '75px', width: '400px', fill: '#468778'},
             visited: "",
             listview: true,
+            togglerCSS: "menu-toggler hidden",
+            genrelistCSS: "genrelist hidden",
             isLoading: true
         };
 
@@ -114,6 +115,15 @@ class App extends Component {
         })
     }
 
+    toggleMenu() {
+        var css = (this.state.togglerCSS === "menu-toggler active") ? "menu-toggler hidden" : "menu-toggler active";
+        var css2 = (this.state.genrelistCSS === "genrelist active") ? "genrelist hidden" : "genrelist active";
+        this.setState({
+            togglerCSS:css,
+            genrelistCSS:css2
+        });
+    }
+
     render() {
 
         if (this.state.isLoading) {
@@ -130,7 +140,9 @@ class App extends Component {
                             <Logo style={this.state.style}/>
                             <h1> The current Best Sellers list</h1>
                         </div>
-                        {!this.state.date ? null : <div className="date">Updates {this.state.update}. Published on {this.state.date}</div>}
+                        {!this.state.date ? null : <div className="date">Published on {this.state.date}</div>}
+                        <div className={this.state.togglerCSS} onClick={this.toggleMenu.bind(this)}><span> </span></div>
+
                     </div>
                     <Switch>
                         <Route exact path={'/'}
@@ -144,6 +156,7 @@ class App extends Component {
                                       search={this.state.search}
                                       visited={this.state.visited}
                                       listview={this.state.listview}
+                                      genrelistCSS={this.state.genrelistCSS}
                                       setMosaicview={this.setMosaicview}
                                       setListview={this.setListview}
                                       updateSearch={this.updateSearch}/>}

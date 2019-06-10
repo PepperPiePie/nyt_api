@@ -13,6 +13,7 @@ class Page extends Component {
                 <GenreList list={this.props.list}
                            setGenre={this.props.setGenre}
                            search={this.props.search}
+                           genrelistCSS={this.props.genrelistCSS}
                            updateSearch={this.props.updateSearch}/>
                 {this.props.welcome
                     ? <Welcome/>
