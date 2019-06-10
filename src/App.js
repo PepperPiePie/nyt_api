@@ -72,8 +72,7 @@ class App extends Component {
 
     setGenre(e) {
         e.preventDefault();
-        // e.target.style.color = '#C8CFD0';
-        // e.target.style.backgroundColor = '#468778';
+
         this.setState({
             genre: e.target.id,
             subtitle: e.currentTarget.dataset.id,

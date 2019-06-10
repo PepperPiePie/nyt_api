@@ -1,5 +1,24 @@
-<<<<<<< HEAD
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A small one-side frontend client build in React for displaying data from New York Times API, specifically Books API for current Bestseller Lists.
+
+The overall goal was to create a client capable of displaying data from the APIs in a nice structured way with responsive layout.
+
+### About API
+Checkout [developer.nytimes.com](https://developer.nytimes.com/) for all of the documentation about using NYTimes APIs and to signup for an API Key.
+
+There are two rate limits per API: 4,000 requests per day and 10 requests per minute. You should sleep 6 seconds between calls to avoid hitting the per minute rate limit.
+### Used libraries
+
+[react-fontawesome](https://github.com/FortAwesome/react-fontawesome) for icons
+
+[axios](https://www.npmjs.com/package/axios) for fetching data
+
+[react-perfect-scrollbar](https://www.npmjs.com/package/react-perfect-scrollbar) for simple and nice scrollbar in categories list
+
+[react-spinners](http://www.davidhu.io/react-spinners/) for loading animation
+
+[CountAPI](https://countapi.xyz/) for pageviews counting 
+
+
 
 ## Available Scripts
 
@@ -37,37 +56,3 @@ If you aren’t satisfied with the build tool and configuration choices, you can
 Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
 You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
-=======
-# nyt_api
-A tiny frontend client capable of displaying data from the selected APIs in a nice structured way.
->>>>>>> a1f00b55d94a1d464128d97be633f5dede339bb8
