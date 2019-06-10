@@ -637,6 +637,10 @@ ul {
         display: block;
     }
 
+    .bookmosaic li {
+        margin-bottom: 2em;
+    }
+
 
 }
 
@@ -646,10 +650,14 @@ ul {
     }
 
     .bookdetail-body{
-        margin-right: 1.5em;
+        margin-right: 2em;
     }
 
     .bookdetail-body p:last-child {
-        margin: 2em 0;
+        margin: 1em 0;
+    }
+
+    .booklist li:last-child {
+        border: initial;
     }
 }
