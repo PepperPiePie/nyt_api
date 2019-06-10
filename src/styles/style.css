@@ -536,18 +536,21 @@ ul {
         padding: 0;
         display: block;
         width: 91vw;
+        border: none;
     }
 
     .title-header {
         padding-left: 2em;
+
     }
 
     .date {
         text-align: right;
+        padding-bottom: 1em;
     }
     .welcome {
         width: 100%;
-        height: 60vh;
+        height: 70vh;
         background-size: 95%;
     }
 
@@ -615,11 +618,11 @@ ul {
     .genrelist {
         z-index: 99;
         margin: 0;
-        width: 75%;
+        width: 75vw;
         height: 100vh;
         max-height: 100vh;
         position: fixed;
-        left: -75%;
+        left: -75vw;
         top: 0;
         transition: 300ms left cubic-bezier(0.77, 0, 0.175, 1);
         background-image: linear-gradient(to left,#76A199 50%,#468778);
@@ -641,10 +644,6 @@ ul {
         margin-bottom: 2em;
     }
 
-
-}
-
-@media only screen and (max-width: 850px) {
     .book-main {
         flex-flow: column;
     }
@@ -658,6 +657,11 @@ ul {
     }
 
     .booklist li:last-child {
-        border: initial;
+        border: inherit;
     }
+
+    .bookmosaic a {
+        padding-bottom: 1.5em;
+    }
+
 }

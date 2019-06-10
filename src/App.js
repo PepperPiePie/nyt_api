@@ -140,7 +140,7 @@ class App extends Component {
                             <Logo style={this.state.style}/>
                             <h1> The current Best Sellers list</h1>
                         </div>
-                        {!this.state.date ? null : <div className="date">Published on {this.state.date}</div>}
+                        {!this.state.date ? null : <div className="date">Last update {this.state.date}</div>}
                         <div className={this.state.togglerCSS} onClick={this.toggleMenu.bind(this)}><span> </span></div>
 
                     </div>
