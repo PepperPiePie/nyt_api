@@ -528,7 +528,6 @@ ul {
 
     .page {
         width: 100vw;
-        padding-left: 2em;
         display: block;
     }
     .title {
@@ -538,11 +537,15 @@ ul {
         width: 91vw;
     }
 
+    .title-header {
+        padding-left: 2em;
+    }
+
     .date {
         text-align: right;
     }
     .welcome {
-        width: 81vw;
+        width: 100%;
         height: 80vh;
     }
 
@@ -551,13 +554,14 @@ ul {
     }
 
     .books {
-        width: 91vw;
+        width: 100%;
     }
 
     .menu-toggler {
         position: absolute;
         z-index: 100;
         top: 20px;
+        left: 2em;
         height: 28px;
         width: 28px;
         outline: none;
@@ -606,11 +610,11 @@ ul {
     .genrelist {
         z-index: 99;
         margin: 0;
-        width: 50%;
+        width: 75%;
         height: 100vh;
         max-height: 100vh;
         position: fixed;
-        left: -50%;
+        left: -75%;
         top: 0;
         transition: 300ms left cubic-bezier(0.77, 0, 0.175, 1);
         background-image: linear-gradient(to left,#76A199 50%,#468778);
