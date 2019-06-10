@@ -644,4 +644,12 @@ ul {
     .book-main {
         flex-flow: column;
     }
+
+    .bookdetail-body{
+        margin-right: 1.5em;
+    }
+
+    .bookdetail-body p:last-child {
+        margin: 2em 0;
+    }
 }
